@@ -1,0 +1,24 @@
+# Hugo build output and caches
+/public/
+/resources/_gen/
+/.hugo_build.lock
+
+# Pixi environments
+/.pixi/*
+!/.pixi/config.toml
+
+# Terraform local state, caches, plans, and sensitive variable files
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc

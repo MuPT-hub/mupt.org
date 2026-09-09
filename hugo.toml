@@ -1,0 +1,27 @@
+baseURL = 'https://mupt.org/'
+languageCode = 'en-us'
+title = 'The Multiscale Polymer Toolkit (MuPT)'
+
+[[module.imports]]
+path = 'github.com/StefMa/hugo-fresh'
+
+[params]
+description = 'A collaborative infrastructure for understanding structure-function relationships in polymers with multiscale molecular modeling and simulations.'
+preloader = false
+
+# Main content from https://github.com/MuPT-hub/.github/blob/main/profile/README.md
+# Use the theme's hero and navigation configuration, with a second CTA
+# supported by layouts/partials/hero-body.html.
+[params.hero]
+title = 'The Multiscale Polymer Toolkit (MuPT)'
+subtitle = 'The multiscale polymer toolkit is a collaborative infrastructure to expand the ability of the polymer research community to understand structure-function relationships in polymers with multiscale molecular modeling and simulations.'
+image = 'mupt-toolkit.png'
+buttontext = 'Documentation'
+buttonlink = 'https://mupt.readthedocs.io'
+secondarybuttontext = 'GitHub'
+secondarybuttonlink = 'https://github.com/MuPT-hub'
+
+# Fresh has no footer prose hook; the small footer partial renders these fields.
+[params.footer]
+funding = 'The project is funded in part by the National Science Foundation, under grants OAC-2411302, OAC-2411303, OAC-2411304, OAC-2411305, and OAC-2411306.'
+disclaimer = 'Any opinions, findings and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the U.S. National Science Foundation.'

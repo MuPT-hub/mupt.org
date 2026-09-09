@@ -1,0 +1,74 @@
+// Colors drawn from the MuPT workflow image; darker green keeps white text legible.
+$mupt-blue: #2d499f;
+$mupt-green: #287c3e;
+$mupt-orange: #c87338;
+
+.landing-caption .title {
+  color: $mupt-blue;
+}
+
+.navbar.is-fresh .navbar-item.is-secondary:hover {
+  color: $mupt-green;
+}
+
+.button.primary-btn {
+  background-color: $mupt-blue;
+  border-color: $mupt-blue;
+}
+
+.button.secondary-btn {
+  background-color: $mupt-green;
+  border-color: $mupt-green;
+}
+
+.button.primary-btn.raised:hover,
+.button.secondary-btn.raised:hover {
+  opacity: 1;
+  filter: brightness(0.9);
+  box-shadow: 0 6px 16px rgba($mupt-blue, 0.2) !important;
+}
+
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid $mupt-orange;
+  outline-offset: 4px;
+}
+
+footer.footer-dark {
+  background-color: #20356f;
+  border-top: 4px solid $mupt-green;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.nsf-logo {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+.funding-content {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.funding-logo {
+  flex: 0 0 150px;
+}
+
+.funding-disclaimer {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .funding-content {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 1.25rem;
+  }
+}

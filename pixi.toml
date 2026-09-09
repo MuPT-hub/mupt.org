@@ -1,0 +1,14 @@
+[workspace]
+authors = ["David W.H. Swenson <dwhs@hyperblazer.net>"]
+channels = ["conda-forge"]
+name = "mupt.org"
+platforms = ["osx-64"]
+version = "0.1.0"
+
+[tasks]
+build = "hugo"
+serve = "hugo server --buildDrafts"
+
+[dependencies]
+go = ">=1.27.1,<2"
+hugo = ">=0.165.0,<0.166"

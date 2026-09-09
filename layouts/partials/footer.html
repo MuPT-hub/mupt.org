@@ -1,0 +1,21 @@
+{{/* Fresh's footer only supports logos and link lists, so provide a prose footer. */}}
+{{ with .Site.Params.footer }}
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-10 is-offset-1 funding-box">
+        <h2 class="title is-5 has-text-white">Funding</h2>
+        <div class="funding-content">
+          <a class="funding-logo" href="https://www.nsf.gov/" aria-label="U.S. National Science Foundation website">
+            <img class="nsf-logo" src="{{ "images/logos/nsf-official.png" | relURL }}" alt="U.S. National Science Foundation">
+          </a>
+          <div>
+            <p class="has-text-white-ter">{{ .funding }}</p>
+            <p class="funding-disclaimer has-text-white-ter">{{ .disclaimer }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{{ end }}

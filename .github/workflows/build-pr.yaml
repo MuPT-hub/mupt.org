@@ -10,6 +10,7 @@ on:
   workflow_dispatch:
 
 env:
+  HUGO_VERSION: "0.166.0"
   HUGO_SOURCE_DIR: "."
   HUGO_BASE_URL: ""
   HUGO_OUTPUT_DIR: "public"
@@ -24,9 +25,12 @@ jobs:
           submodules: 'recursive'
 
       - name: Build site
-        uses: omsf/static-site-tools/build/hugo@main
+        uses: dwhswenson/static-site-tools/build/hugo@update-hugo-action
+        #uses: omsf/static-site-tools/build/hugo@main  # restore after upstream PR merges
         #uses: ./build/hugo  # dev
         with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          update-modules: "false"
           base-url: ${{ env.HUGO_BASE_URL }}
           source-directory: ${{ env.HUGO_SOURCE_DIR }}
           output-directory: ${{ env.HUGO_OUTPUT_DIR }}

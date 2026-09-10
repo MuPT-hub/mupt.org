@@ -12,3 +12,9 @@ serve = "hugo server --buildDrafts"
 [dependencies]
 go = ">=1.27.1,<2"
 hugo = ">=0.165.0,<0.166"
+
+[feature.admin.dependencies]
+opentofu = ">=1.11.5,<2"
+
+[environments]
+admin = ["admin"]

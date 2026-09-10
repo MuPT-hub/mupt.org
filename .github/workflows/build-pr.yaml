@@ -1,0 +1,50 @@
+name: Build Hugo site from PR
+
+on: 
+  pull_request:
+    branches:
+      - main
+  # SCHEDULE AND WORKFLOW DISPATCH USED FOR TESTING
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+env:
+  HUGO_SOURCE_DIR: "."
+  HUGO_BASE_URL: ""
+  HUGO_OUTPUT_DIR: "public"
+  # if you change HUGO_OUTPUT_DIR, also add a repository variable for it
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: 'recursive'
+
+      - name: Build site
+        uses: omsf/static-site-tools/build/hugo@main
+        #uses: ./build/hugo  # dev
+        with:
+          base-url: ${{ env.HUGO_BASE_URL }}
+          source-directory: ${{ env.HUGO_SOURCE_DIR }}
+          output-directory: ${{ env.HUGO_OUTPUT_DIR }}
+
+      - name: Test site
+        uses: omsf/static-site-tools/common-tests@main
+        with:
+          site-directory: ${{ env.HUGO_SOURCE_DIR }}/${{ env.HUGO_OUTPUT_DIR}}
+          base-url: ${{ env.HUGO_BASE_URL }}
+
+      - name: Make artifact
+        shell: bash
+        run: tar czf site.tar.gz -C ${{ env.HUGO_SOURCE_DIR }} ${{ env.HUGO_OUTPUT_DIR }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-build
+          path: site.tar.gz
+          if-no-files-found: error
+          retention-days: 1

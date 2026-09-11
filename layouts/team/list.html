@@ -1,0 +1,83 @@
+{{ define "main" }}
+  {{ partial "navbar.html" . }}
+  {{ partial "navbar-clone.html" . }}
+
+  {{- $members := .RegularPages -}}
+  {{- $validGroups := slice "pi" "trainee" "support" -}}
+  {{- range $members -}}
+    {{- if not .Params.name -}}
+      {{- errorf "team member %q is missing required field 'name'" .File.Path -}}
+    {{- end -}}
+    {{- if not .Params.affil -}}
+      {{- errorf "team member %q is missing required field 'affil'" .File.Path -}}
+    {{- end -}}
+    {{- if not .Params.image -}}
+      {{- errorf "team member %q is missing required field 'image'" .File.Path -}}
+    {{- end -}}
+    {{- if not (in $validGroups .Params.group) -}}
+      {{- errorf "team member %q has invalid group %q; expected pi, trainee, or support" .File.Path .Params.group -}}
+    {{- end -}}
+  {{- end -}}
+
+  <section class="section is-medium">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-centered-tablet-portrait">
+          <h1 class="title section-title">{{ .Title }}</h1>
+          {{ with .Params.subtitle }}
+          <p class="subtitle is-5 is-muted">{{ . }}</p>
+          {{ end }}
+          <div class="divider"></div>
+        </div>
+      </div>
+
+      {{- $groups := slice
+        (dict "key" "pi" "title" "PIs")
+        (dict "key" "support" "title" "Support Staff")
+        (dict "key" "trainee" "title" "Trainees")
+      -}}
+      {{- range $groups -}}
+        {{- $groupMembers := where $members "Params.group" .key -}}
+        {{- if $groupMembers -}}
+        <section class="team-group" aria-labelledby="team-{{ .key }}">
+          <h2 id="team-{{ .key }}" class="title is-3 team-group-title">{{ .title }}</h2>
+          <div class="columns is-multiline team-grid">
+            {{- range $groupMembers.ByParam "name" }}
+            <div class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
+              <article class="card team-card">
+                <div class="card-image">
+                  <figure class="image team-portrait">
+                    <img src="{{ .Params.image | relURL }}" alt="{{ .Params.name }}" loading="lazy" width="400" height="400">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <h3 class="title is-4">{{ .Params.name }}</h3>
+                  <p class="team-affiliation">{{ .Params.affil }}</p>
+                  {{- if or .Params.github .Params.scholar .Params.website }}
+                  <nav class="team-links" aria-label="Links for {{ .Params.name }}">
+                    {{- with .Params.github }}
+                    <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    {{- end }}
+                    {{- with .Params.scholar }}
+                    <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+                    {{- end }}
+                    {{- with .Params.website }}
+                    <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">Website</a>
+                    {{- end }}
+                  </nav>
+                  {{- end }}
+                </div>
+              </article>
+            </div>
+            {{- end }}
+          </div>
+        </section>
+        {{- end }}
+      {{- end }}
+    </div>
+  </section>
+
+  {{ if .Params.include_footer }}
+    {{ partial "footer.html" . }}
+  {{ end }}
+{{ end }}

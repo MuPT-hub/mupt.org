@@ -1,0 +1,25 @@
+version: 2
+
+updates:
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    allow:
+      - dependency-type: "all"
+    ignore:
+      # hugo-fresh v1.2.0 requires Bulma's legacy Sass entrypoint.
+      - dependency-name: "github.com/jgthms/bulma"
+    groups:
+      hugo-modules:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"

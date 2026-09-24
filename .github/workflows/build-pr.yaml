@@ -25,8 +25,7 @@ jobs:
           submodules: 'recursive'
 
       - name: Build site
-        uses: dwhswenson/static-site-tools/build/hugo@update-hugo-action
-        #uses: omsf/static-site-tools/build/hugo@main  # restore after upstream PR merges
+        uses: omsf/static-site-tools/build/hugo@main
         #uses: ./build/hugo  # dev
         with:
           hugo-version: ${{ env.HUGO_VERSION }}

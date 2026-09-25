@@ -9,6 +9,10 @@ path = 'github.com/StefMa/hugo-fresh'
 description = 'A collaborative infrastructure for understanding structure-function relationships in polymers with multiscale molecular modeling and simulations.'
 preloader = false
 
+[[params.navbar]]
+title = 'Team'
+url = '/team/'
+
 # Main content from https://github.com/MuPT-hub/.github/blob/main/profile/README.md
 # Use the theme's hero and navigation configuration, with a second CTA
 # supported by layouts/partials/hero-body.html.

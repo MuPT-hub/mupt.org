@@ -2,16 +2,20 @@
 authors = ["David W.H. Swenson <dwhs@hyperblazer.net>"]
 channels = ["conda-forge"]
 name = "mupt.org"
-platforms = ["osx-64"]
+platforms = ["osx-64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
 build = "hugo"
 serve = "hugo server --buildDrafts"
+check-team-images = "python scripts/team_images.py check"
+optimize-team-images = "python scripts/team_images.py optimize"
 
 [dependencies]
 go = ">=1.27.1,<2"
 hugo = ">=0.165.0,<0.166"
+pillow = ">=12.3.0,<13"
+python = ">=3.14.7,<3.15"
 
 [feature.admin.dependencies]
 opentofu = ">=1.11.5,<2"

@@ -65,6 +65,70 @@ footer a:hover {
   margin-top: 1rem;
 }
 
+.team-group + .team-group {
+  margin-top: 3.5rem;
+}
+
+.team-group-title {
+  color: $mupt-blue;
+  margin-bottom: 1.5rem;
+}
+
+.team-grid .column {
+  display: flex;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.team-portrait {
+  aspect-ratio: 1;
+  background-color: #f2f4f8;
+  overflow: hidden;
+}
+
+.team-portrait img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.team-card .card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+}
+
+.team-affiliation {
+  color: #667085;
+  line-height: 1.45;
+}
+
+.team-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 1.25rem;
+}
+
+.team-links a {
+  color: $mupt-blue;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.team-links a:hover {
+  color: $mupt-green;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
   .funding-content {
     align-items: center;

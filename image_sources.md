@@ -13,7 +13,7 @@ Sources were verified on 2026-09-10.
 | [`jeff-wagner.jpg`](static/images/team/jeff-wagner.jpg) | Jeff Wagner | [Open Force Field team page](https://openforcefield.org/about/team/) | [jeff-wagner.jpg](https://openforcefield.org/about/team/img/jeff-wagner.jpg) |
 | [`janani-sampath.jpg`](static/images/team/janani-sampath.jpg) | Janani Sampath | [University of Florida profile](https://che.ufl.edu/research/modeling-theory-and-simulation/name/janani-sampath/) | [Sampath_2021.jpg](https://che.ufl.edu/wp-content/uploads/sites/47/connections-images/janani-sampath/Sampath_2021-110b0b88dc72f76719411cf4ed91b6f6.jpg) |
 | [`sapna-sarupria.jpg`](static/images/team/sapna-sarupria.jpg) | Sapna Sarupria | [Sarupria Group people page](https://sampel-group.github.io/people.html) | [Sarupria_UMN.JPG](https://sampel-group.github.io/Data/Pictures/mugshots/Sarupria_UMN.JPG) |
-| [`michael-shirts.jpg`](static/images/team/michael-shirts.jpg) | Michael Shirts | [University of Colorado Boulder profile](https://www.colorado.edu/certificate/iqbiology/michael-shirts) | [michael_shirts_.jpg](https://www.colorado.edu/certificate/iqbiology/sites/default/files/people/michael_shirts_.jpg) |
+| [`michael-shirts.png`](static/images/team/michael-shirts.png) | Michael Shirts | Provided by Michael Shirts | Provided by Michael Shirts |
 
 ## Trainees
 

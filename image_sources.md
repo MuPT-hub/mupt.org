@@ -20,6 +20,7 @@ Sources were verified on 2026-09-10.
 | Local file | Person | Source page | Original image asset |
 | --- | --- | --- | --- |
 | [`tim-bernat.jpg`](static/images/team/tim-bernat.jpg) | Tim Bernat | [GitHub profile](https://github.com/timbernat) | [GitHub avatar](https://github.com/timbernat.png?size=400) |
+| [`griffin-golde.jpg`](static/images/team/griffin-golde.jpg) | Griffin Golde | [University of Colorado Boulder profile](https://www.colorado.edu/chbe/griffin-golde) | [GriffinGolde_ChBE_20260813_JMP_2_0.jpg](https://www.colorado.edu/chbe/sites/default/files/2026-09/GriffinGolde_ChBE_20260813_JMP_2_0.jpg) (verified 2026-10-08) |
 | [`salman-bin-kashif.jpg`](static/images/team/salman-bin-kashif.jpg) | Salman Bin Kashif | [Sarupria Group people page](https://sampel-group.github.io/people.html) | [Kashif.jpg](https://sampel-group.github.io/Data/Pictures/mugshots/Kashif.jpg) |
 | [`sirsha-ganguly.jpg`](static/images/team/sirsha-ganguly.jpg) | Sirsha Ganguly | [University of Florida profile](https://che.ufl.edu/people/ph-d-students/name/sirsha-ganguly/) | [Ganguly-Sirsha_4-web.jpg](https://che.ufl.edu/wp-content/uploads/sites/47/connections-images/sirsha-ganguly/Ganguly-Sirsha_4-web-cfe72ec0789881a539ad9704e6d2f5d2.jpg) |
 | [`joe-laforet-jr.jpg`](static/images/team/joe-laforet-jr.jpg) | Joe Laforet Jr. | [GitHub profile](https://github.com/joelaforet) | [GitHub avatar](https://github.com/joelaforet.png?size=400) |

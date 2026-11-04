@@ -10,8 +10,23 @@ description = 'A collaborative infrastructure for understanding structure-functi
 preloader = false
 
 [[params.navbar]]
+title = 'Home'
+url = '/'
+
+[[params.navbar]]
 title = 'Team'
 url = '/team/'
+
+[[params.navbar]]
+title = 'GitHub'
+url = 'https://github.com/MuPT-hub'
+external = true
+
+[[params.navbar]]
+title = 'Documentation'
+url = 'https://mupt.readthedocs.io'
+external = true
+cta = true
 
 # Main content from https://github.com/MuPT-hub/.github/blob/main/profile/README.md
 # Use the theme's hero and navigation configuration, with a second CTA

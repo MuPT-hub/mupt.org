@@ -1,0 +1,24 @@
+<nav class="mupt-navbar" aria-label="Main navigation">
+  <div class="container mupt-nav-container">
+    <a class="mupt-brand" href="{{ "/" | relURL }}" aria-label="MuPT home">
+      <img src="{{ "images/logos/mupt.svg" | relURL }}" alt="" width="154" height="44">
+    </a>
+    <button class="mupt-nav-toggle" type="button" aria-expanded="false" aria-controls="mupt-navigation" hidden>
+      Menu
+      <span class="mupt-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <div id="mupt-navigation" class="mupt-nav-menu">
+      {{- range .Site.Params.navbar -}}
+        {{- $url := .url | relURL -}}
+        {{- $current := eq $.RelPermalink $url -}}
+        {{- if and (not .external) (ne .url "/") -}}
+          {{- $current = hasPrefix $.RelPermalink $url -}}
+        {{- end }}
+      <a class="mupt-nav-link{{ if .cta }} mupt-nav-docs{{ end }}" href="{{ $url }}"{{ if $current }} aria-current="page"{{ end }}{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+        {{ .title }}{{ if .external }} <span aria-hidden="true">↗</span><span class="is-sr-only"> (opens in a new tab)</span>{{ end }}
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</nav>
+<script src="{{ "js/navigation.js" | relURL }}" defer></script>
